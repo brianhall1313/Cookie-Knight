@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bib58b7dq12ph"]
+
+[ext_resource type="Material" uid="uid://d0p11dbps25br" path="res://Resources/rainbow_beam.tres" id="1_12bo1"]
+[ext_resource type="Texture2D" uid="uid://cnwgy27cxnhwn" path="res://Textures/cookie_of_power.png" id="2_4yicd"]
+[ext_resource type="Script" path="res://Scenes/cookie_of_ultimate_power.gd" id="3_yrndd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xispe"]
+radius = 7.0
+
+[node name="cookie_of_ultimate_power" type="Sprite2D"]
+material = ExtResource("1_12bo1")
+texture = ExtResource("2_4yicd")
+script = ExtResource("3_yrndd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xispe")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

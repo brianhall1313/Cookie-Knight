@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bulada4rlkkxy"]
+
+[ext_resource type="Script" path="res://Scenes/switch.gd" id="1_78mkv"]
+[ext_resource type="Texture2D" uid="uid://dngg6lf2in41r" path="res://Textures/atlas_floor-16x16.png" id="2_csfl1"]
+[ext_resource type="Theme" uid="uid://bi3xdm2usb45q" path="res://Resources/basic_theme.tres" id="3_kgdqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttun5"]
+size = Vector2(13, 12)
+
+[node name="switch" type="Node2D" groups=["switch"]]
+script = ExtResource("1_78mkv")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_csfl1")
+region_enabled = true
+region_rect = Rect2(32, 80, 16, 16)
+
+[node name="hint" type="Label" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = -13.0
+theme = ExtResource("3_kgdqc")
+text = "Space"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ttun5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://db1bp6vhah1rx"]
+
+[node name="Audio_Controller" type="Node"]
+process_mode = 3
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+
+[node name="Key_Pickup" type="AudioStreamPlayer" parent="."]
+
+[node name="Descent" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+
+[node name="Landing" type="AudioStreamPlayer" parent="."]

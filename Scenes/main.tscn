@@ -1,0 +1,170 @@
+[gd_scene load_steps=5 format=3 uid="uid://wnq5ncsxhm3i"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_et5cd"]
+[ext_resource type="Theme" uid="uid://bi3xdm2usb45q" path="res://Resources/basic_theme.tres" id="2_oahii"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxvxl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp8rw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_et5cd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_oahii")
+
+[node name="background" type="Panel" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 352.0
+offset_bottom = 184.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 184.0
+
+[node name="Control" type="Control" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "Cookie Knight
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="New Game" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Game "
+
+[node name="How to Play" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "How to Play"
+
+[node name="Credits" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit "
+
+[node name="Control3" type="Control" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="how to play" type="PanelContainer" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_oxvxl")
+
+[node name="Panel2" type="ColorRect" parent="Control/how to play"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/how to play"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/how to play/VBoxContainer"]
+layout_mode = 2
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="how to play" type="Label" parent="Control/how to play/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/how to play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="how_to_play_button_back" type="Button" parent="Control/how to play/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Back"
+
+[node name="Control" type="Control" parent="Control/how to play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="credits" type="PanelContainer" parent="Control"]
+top_level = true
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 184.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dp8rw")
+
+[node name="Panel" type="ColorRect" parent="Control/credits"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/credits"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+text = "Made for
+
+Designer/Programmer
+Brian Hall
+https://pr0t34n.itch.io/
+asstes:
+Dungeon Tileset and characters: https://0x72.itch.io/
+
+"
+horizontal_alignment = 1
+
+[node name="credits_back" type="Button" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Back"
+
+[node name="Control" type="Control" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="button_up" from="Control/VBoxContainer/VBoxContainer/New Game" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/VBoxContainer/How to Play" to="." method="_on_how_to_play_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="Control/how to play/VBoxContainer/how_to_play_button_back" to="." method="_on_how_to_play_button_back_button_up"]
+[connection signal="button_up" from="Control/credits/VBoxContainer/credits_back" to="." method="_on_credits_back_button_up"]
