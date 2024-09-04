@@ -1,0 +1,193 @@
+[gd_scene load_steps=14 format=3 uid="uid://bfy5yyqdi7i5e"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_h3hum"]
+[ext_resource type="Texture2D" uid="uid://cdmi8l67x2fhm" path="res://Textures/test_sheet.png" id="2_c4d48"]
+[ext_resource type="PackedScene" uid="uid://bulada4rlkkxy" path="res://Scenes/switch.tscn" id="3_6wjr4"]
+[ext_resource type="PackedScene" uid="uid://dvtk71xuy3xf1" path="res://Scenes/spike_trap.tscn" id="4_f48pe"]
+[ext_resource type="Theme" uid="uid://bi3xdm2usb45q" path="res://Resources/basic_theme.tres" id="5_8ovoe"]
+[ext_resource type="Script" path="res://Scenes/UI.gd" id="6_7vwv5"]
+[ext_resource type="PackedScene" uid="uid://bv0ckbt1ckw55" path="res://Scenes/cookie.tscn" id="7_xcphe"]
+[ext_resource type="PackedScene" uid="uid://bfyt5w1b8ea8a" path="res://Scenes/box.tscn" id="8_lndgv"]
+[ext_resource type="PackedScene" uid="uid://ddxl0a4xpbdtm" path="res://Scenes/imp.tscn" id="9_uhxwk"]
+[ext_resource type="PackedScene" uid="uid://brr7ntbe2c4fc" path="res://Scenes/player.tscn" id="10_0krhe"]
+[ext_resource type="PackedScene" uid="uid://bib58b7dq12ph" path="res://Scenes/cookie_of_ultimate_power.tscn" id="11_jsjtv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twe1m"]
+texture = ExtResource("2_c4d48")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_njci6"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_twe1m")
+
+[node name="level_6" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_h3hum")
+start_position = Vector2i(1, 5)
+stamina = 25
+
+[node name="map" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_njci6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 65536, 0, 131072, 65536, 0, 196608, 65536, 0, 262144, 65536, 0, 327680, 65536, 0, 393216, 65536, 0, 458752, 65536, 0, 524288, 65536, 0, 589824, 65536, 0, 589825, 65536, 0, 589826, 65536, 0, 589827, 65536, 0, 589828, 65536, 0, 589829, 65536, 0, 589830, 65536, 0, 589831, 65536, 0, 589832, 65536, 0, 589833, 65536, 0, 589834, 65536, 0, 589835, 65536, 0, 589836, 65536, 0, 589837, 65536, 0, 589838, 65536, 0, 589839, 65536, 0, 589840, 65536, 0, 589841, 65536, 0, 589842, 65536, 0, 589843, 65536, 0, 524307, 65536, 0, 458771, 65536, 0, 393235, 65536, 0, 327699, 65536, 0, 262163, 65536, 0, 196627, 65536, 0, 131091, 65536, 0, 65555, 65536, 0, 19, 65536, 0, 18, 65536, 0, 17, 65536, 0, 16, 65536, 0, 15, 65536, 0, 14, 65536, 0, 13, 65536, 0, 12, 65536, 0, 11, 65536, 0, 10, 65536, 0, 9, 65536, 0, 8, 65536, 0, 7, 65536, 0, 6, 65536, 0, 5, 65536, 0, 4, 65536, 0, 3, 65536, 0, 2, 65536, 0, 1, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 196613, 0, 0, 196614, 131072, 0, 262151, 131072, 0, 262152, 131072, 0, 327689, 131072, 0, 327690, 131072, 0, 393227, 131072, 0, 393228, 65536, 0, 131073, 65536, 0, 196609, 0, 0, 262145, 131072, 0, 327681, 131072, 0, 393217, 131072, 0, 458753, 65536, 0, 524289, 65536, 0, 131074, 65536, 0, 196610, 0, 0, 262146, 131072, 0, 327682, 131072, 0, 393218, 131072, 0, 458754, 65536, 0, 524290, 65536, 0, 65539, 65536, 0, 196611, 0, 0, 262147, 131072, 0, 327683, 131072, 0, 393219, 131072, 0, 458755, 65536, 0, 524291, 65536, 0, 65540, 65536, 0, 196612, 0, 0, 262148, 131072, 0, 327684, 131072, 0, 393220, 131072, 0, 458756, 65536, 0, 524292, 65536, 0, 65541, 65536, 0, 131077, 65536, 0, 262149, 131072, 0, 327685, 131072, 0, 393221, 131072, 0, 458757, 65536, 0, 524293, 65536, 0, 65542, 0, 0, 131078, 131072, 0, 262150, 131072, 0, 327686, 131072, 0, 393222, 131072, 0, 458758, 131072, 0, 524294, 131072, 0, 65543, 0, 0, 131079, 131072, 0, 196615, 131072, 0, 393223, 131072, 0, 458759, 131072, 0, 524295, 131072, 0, 65544, 0, 0, 131080, 131072, 0, 196616, 131072, 0, 327688, 131072, 0, 393224, 131072, 0, 458760, 131072, 0, 524296, 131072, 0, 65545, 65536, 0, 131081, 65536, 0, 196617, 0, 0, 262153, 131072, 0, 393225, 131072, 0, 458761, 65536, 0, 524297, 65536, 0, 65546, 0, 0, 131082, 131072, 0, 196618, 131072, 0, 262154, 131072, 0, 393226, 131072, 0, 458762, 131072, 0, 524298, 131072, 0, 65547, 0, 0, 131083, 131072, 0, 196619, 131072, 0, 262155, 131072, 0, 327691, 131072, 0, 458763, 131072, 0, 524299, 131072, 0, 65548, 0, 0, 131084, 131072, 0, 196620, 131072, 0, 262156, 131072, 0, 327692, 65536, 0, 458764, 0, 0, 524300, 131072, 0, 65549, 0, 0, 131085, 131072, 0, 196621, 131072, 0, 262157, 131072, 0, 327693, 131072, 0, 393229, 131072, 0, 458765, 131072, 0, 524301, 131072, 0, 65550, 65536, 0, 131086, 65536, 0, 196622, 65536, 0, 262158, 0, 0, 327694, 131072, 0, 393230, 65536, 0, 458766, 65536, 0, 524302, 65536, 0, 65551, 0, 0, 131087, 131072, 0, 196623, 131072, 0, 262159, 131072, 0, 327695, 131072, 0, 393231, 131072, 0, 458767, 131072, 0, 524303, 131072, 0, 65552, 0, 0, 131088, 131072, 0, 196624, 131072, 0, 262160, 131072, 0, 393232, 131072, 0, 458768, 131072, 0, 524304, 131072, 0, 65553, 0, 0, 131089, 131072, 0, 196625, 131072, 0, 327697, 131072, 0, 458769, 131072, 0, 524305, 131072, 0, 65554, 0, 0, 131090, 131072, 0, 196626, 131072, 0, 262162, 131072, 0, 393234, 131072, 0, 458770, 131072, 0, 524306, 131072, 0)
+
+[node name="switch" parent="." instance=ExtResource("3_6wjr4")]
+position = Vector2(152, 88)
+
+[node name="player" parent="." instance=ExtResource("10_0krhe")]
+position = Vector2(24, 88)
+
+[node name="spike_trap" parent="." instance=ExtResource("4_f48pe")]
+position = Vector2(264, 88)
+
+[node name="spike_trap5" parent="." instance=ExtResource("4_f48pe")]
+position = Vector2(120, 88)
+
+[node name="spike_trap2" parent="." instance=ExtResource("4_f48pe")]
+position = Vector2(280, 72)
+
+[node name="spike_trap3" parent="." instance=ExtResource("4_f48pe")]
+position = Vector2(296, 88)
+
+[node name="spike_trap4" parent="." instance=ExtResource("4_f48pe")]
+position = Vector2(280, 104)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_8ovoe")
+script = ExtResource("6_7vwv5")
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 235.0
+offset_bottom = 200.0
+columns = 4
+
+[node name="title" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "Stamina:"
+
+[node name="player_stamina" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="slash" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "/"
+
+[node name="max_stamina" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="quit_button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 160.0
+offset_right = 319.0
+offset_bottom = 179.0
+text = "Quit"
+
+[node name="reset_button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 160.0
+offset_right = 271.0
+offset_bottom = 179.0
+text = "Reset"
+
+[node name="undo_button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 160.0
+offset_right = 37.0
+offset_bottom = 179.0
+text = " Undo"
+
+[node name="cookie" parent="." instance=ExtResource("7_xcphe")]
+position = Vector2(168, 72)
+
+[node name="box" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(120, 72)
+
+[node name="box6" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(120, 104)
+
+[node name="box7" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(136, 120)
+
+[node name="box8" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(136, 120)
+
+[node name="box11" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(152, 104)
+
+[node name="box12" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(184, 72)
+
+[node name="box13" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(168, 56)
+
+[node name="box3" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(136, 56)
+
+[node name="box9" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(136, 88)
+
+[node name="box10" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(216, 88)
+
+[node name="box4" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(152, 72)
+
+[node name="box5" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(168, 88)
+
+[node name="box2" parent="." instance=ExtResource("8_lndgv")]
+position = Vector2(168, 104)
+
+[node name="imp" parent="." instance=ExtResource("9_uhxwk")]
+position = Vector2(184, 56)
+
+[node name="cookie_of_ultimate_power" parent="." instance=ExtResource("11_jsjtv")]
+position = Vector2(280, 88)
+
+[connection signal="button_up" from="UI/quit_button" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="UI/reset_button" to="." method="_on_reset_button_button_up"]
+[connection signal="button_up" from="UI/undo_button" to="." method="_on_undo_button_button_up"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvpureydbp2iy"]
+
+[ext_resource type="Material" uid="uid://d0p11dbps25br" path="res://Resources/rainbow_beam.tres" id="1_n1h84"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tcgi7"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 10.0
+radial_accel_max = 20.0
+
+[node name="quickening" type="GPUParticles2D"]
+material = ExtResource("1_n1h84")
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_tcgi7")
+explosiveness = 0.4

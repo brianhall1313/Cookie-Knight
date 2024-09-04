@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://djig8e7vovwbi"]
+
+[ext_resource type="Texture2D" uid="uid://8a26c20ki1ge" path="res://Textures/cookie_of_power_2.png" id="1_0k14f"]
+[ext_resource type="Script" path="res://Scenes/falling_cookie.gd" id="2_72ff4"]
+
+[node name="falling_cookie" type="Sprite2D"]
+z_index = -1
+scale = Vector2(2, 2)
+texture = ExtResource("1_0k14f")
+script = ExtResource("2_72ff4")

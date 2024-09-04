@@ -16,6 +16,8 @@ extends CharacterBody2D
 @export var max_stamina:int
 @export var stamina:int
 
+
+var dead: bool = false
 var moving:bool = false 
 var flipable: bool = false
 var flip_target=null
@@ -28,7 +30,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	if not moving:
+	if not moving and not dead:
 		check_movement()
 		check_flip()
 
@@ -51,7 +53,8 @@ func check_movement():
 		GlobalSignalBus.move_player.emit(self,direction)
 		
 func check_stamina():
-	if stamina<=0:
+	if stamina<0:
+		AudioController.die.play()
 		GlobalSignalBus.player_death.emit()
 
 
@@ -73,6 +76,7 @@ func go_here(direction):
 			if collider.has_method("push"):
 				collider.push(direction)
 			elif collider.has_method("get_hit"):
+				AudioController.stab.play()
 				collider.get_hit()
 	return ""
 
@@ -83,6 +87,7 @@ func spend_stam(cost = 1):
 	check_stamina()
 
 func get_cookie(value):
+	AudioController.eat_cookie.play()
 	gain_stamina(value)
 	GlobalSignalBus.player_stamina.emit(stamina)
 
@@ -97,4 +102,7 @@ func set_flipable(v:bool,target = null):
 	print("flipable: ",flipable," and the target ", flip_target)
 
 func death():
+	AudioController.die.play()
+	dead = true
 	sprite.hide()
+	

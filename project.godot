@@ -18,9 +18,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AudioController="*res://Global/Audio_Controller.gd"
 Global="*res://Global/Global.gd"
 GlobalSignalBus="*res://Global/GlobalSignalBus.gd"
+AudioController="*res://Global/audio_controller.tscn"
 
 [display]
 

@@ -3,8 +3,6 @@ extends Node2D
 @onready var hint = $hint
 @onready var sprite = $sprite
 
-var toggle_on = Rect2(32,80,16,16)
-var toggle_off = Rect2(48,80,16,16)
 var toggled:bool = false
 
 
@@ -12,15 +10,14 @@ func _ready():
 	y_sort_enabled=true
 	
 
-
 func toggle():
 	if not toggled:
-		sprite.region_rect = toggle_off
+		sprite.flip_h = not sprite.flip_h
 		toggled = true
 		hint.hide()
 		GlobalSignalBus.switch_toggled_off.emit(self)
 	else:
-		sprite.region_rect = toggle_on
+		sprite.flip_h = not sprite.flip_h
 		toggled = false
 		hint.show()
 		GlobalSignalBus.switch_toggled_on.emit(self)

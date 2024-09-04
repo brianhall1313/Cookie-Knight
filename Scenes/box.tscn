@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfyt5w1b8ea8a"]
 
-[ext_resource type="Texture2D" uid="uid://bokwxvnemfif0" path="res://Textures/crate.png" id="1_djxuy"]
 [ext_resource type="Script" path="res://Scenes/box.gd" id="1_fukif"]
+[ext_resource type="Texture2D" uid="uid://djrrn0rajvpjm" path="res://Textures/block.png" id="2_o5vlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htxrj"]
 size = Vector2(14, 14)
@@ -10,7 +10,7 @@ size = Vector2(14, 14)
 script = ExtResource("1_fukif")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_djxuy")
+texture = ExtResource("2_o5vlu")
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

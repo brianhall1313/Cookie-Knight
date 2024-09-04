@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bulada4rlkkxy"]
 
 [ext_resource type="Script" path="res://Scenes/switch.gd" id="1_78mkv"]
-[ext_resource type="Texture2D" uid="uid://dngg6lf2in41r" path="res://Textures/atlas_floor-16x16.png" id="2_csfl1"]
+[ext_resource type="Texture2D" uid="uid://cdmi8l67x2fhm" path="res://Textures/test_sheet.png" id="2_pxe0s"]
 [ext_resource type="Theme" uid="uid://bi3xdm2usb45q" path="res://Resources/basic_theme.tres" id="3_kgdqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttun5"]
@@ -11,9 +11,9 @@ size = Vector2(13, 12)
 script = ExtResource("1_78mkv")
 
 [node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_csfl1")
+texture = ExtResource("2_pxe0s")
 region_enabled = true
-region_rect = Rect2(32, 80, 16, 16)
+region_rect = Rect2(112, 0, 16, 16)
 
 [node name="hint" type="Label" parent="."]
 visible = false

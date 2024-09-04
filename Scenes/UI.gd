@@ -7,9 +7,7 @@ func _ready():
 	GlobalSignalBus.connect("player_stamina",update_stamina)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 func initial(max_stam):
 	player_stamina.text = str(max_stam)

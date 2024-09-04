@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr2o76jtjgq8"]
+
+[sub_resource type="Gradient" id="Gradient_ahyr7"]
+offsets = PackedFloat32Array(0.0333333, 0.64, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.662745, 0, 0, 1, 1, 1, 1, 0)
+
+[node name="dood_explosion" type="CPUParticles2D"]
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+color_ramp = SubResource("Gradient_ahyr7")

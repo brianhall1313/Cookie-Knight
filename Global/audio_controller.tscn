@@ -1,18 +1,54 @@
-[gd_scene format=3 uid="uid://db1bp6vhah1rx"]
+[gd_scene load_steps=12 format=3 uid="uid://db1bp6vhah1rx"]
+
+[ext_resource type="AudioStream" uid="uid://c0ipihynthd3y" path="res://Audio/Adventure Meme.mp3" id="1_oellt"]
+[ext_resource type="Script" path="res://Global/audio_controller.gd" id="1_w10yt"]
+[ext_resource type="AudioStream" uid="uid://b43phpfdt10pu" path="res://Audio/footstep_concrete_000.ogg" id="3_k3cfn"]
+[ext_resource type="AudioStream" uid="uid://gmgigxaah7va" path="res://Audio/footstep_concrete_001.ogg" id="4_85aq6"]
+[ext_resource type="AudioStream" uid="uid://buo46rmlyyp7r" path="res://Audio/drawKnife1.ogg" id="5_wkdij"]
+[ext_resource type="AudioStream" uid="uid://dq4o3ud8exv3q" path="res://Audio/switch11.ogg" id="6_11qu7"]
+[ext_resource type="AudioStream" uid="uid://d3lbr0ytvdg70" path="res://Audio/confirmation_002.ogg" id="7_3skxh"]
+[ext_resource type="AudioStream" uid="uid://b6pngh0oygoee" path="res://Audio/coup get.wav" id="8_dx3et"]
+[ext_resource type="AudioStream" uid="uid://dau6w8xntq0c8" path="res://Audio/error_006.ogg" id="9_tliwp"]
+[ext_resource type="AudioStream" uid="uid://ce62dekkg1c0u" path="res://Audio/error_008.ogg" id="10_4pd4r"]
+[ext_resource type="AudioStream" uid="uid://ba5onao6pxm1t" path="res://Audio/knifeSlice.ogg" id="10_nu706"]
 
 [node name="Audio_Controller" type="Node"]
 process_mode = 3
+script = ExtResource("1_w10yt")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("1_oellt")
+volume_db = -16.0
 autoplay = true
 
-[node name="Jump" type="AudioStreamPlayer" parent="."]
+[node name="walk1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k3cfn")
+volume_db = 6.0
 
-[node name="Damage" type="AudioStreamPlayer" parent="."]
+[node name="walk2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_85aq6")
+volume_db = 6.0
 
-[node name="Key_Pickup" type="AudioStreamPlayer" parent="."]
+[node name="push" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wkdij")
+volume_db = 6.0
 
-[node name="Descent" type="AudioStreamPlayer" parent="."]
+[node name="switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_11qu7")
+
+[node name="eat_cookie" type="AudioStreamPlayer" parent="."]
 process_mode = 3
+stream = ExtResource("7_3skxh")
 
-[node name="Landing" type="AudioStreamPlayer" parent="."]
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dx3et")
+
+[node name="die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tliwp")
+
+[node name="undo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4pd4r")
+
+[node name="stab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_nu706")

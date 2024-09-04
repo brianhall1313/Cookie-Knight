@@ -1,0 +1,142 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpumwik2fpdxv"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_iwfgt"]
+[ext_resource type="Texture2D" uid="uid://cdmi8l67x2fhm" path="res://Textures/test_sheet.png" id="2_yrui2"]
+[ext_resource type="Theme" uid="uid://bi3xdm2usb45q" path="res://Resources/basic_theme.tres" id="5_78562"]
+[ext_resource type="Script" path="res://Scenes/UI.gd" id="6_ho5mg"]
+[ext_resource type="PackedScene" uid="uid://bv0ckbt1ckw55" path="res://Scenes/cookie.tscn" id="7_c5360"]
+[ext_resource type="PackedScene" uid="uid://bfyt5w1b8ea8a" path="res://Scenes/box.tscn" id="8_1i8hh"]
+[ext_resource type="PackedScene" uid="uid://brr7ntbe2c4fc" path="res://Scenes/player.tscn" id="10_ohvt4"]
+[ext_resource type="PackedScene" uid="uid://bib58b7dq12ph" path="res://Scenes/cookie_of_ultimate_power.tscn" id="11_6rhfj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twe1m"]
+texture = ExtResource("2_yrui2")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_njci6"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_twe1m")
+
+[node name="level_2" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_iwfgt")
+start_position = Vector2i(4, 5)
+stamina = 16
+
+[node name="map" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_njci6")
+format = 2
+layer_0/tile_data = PackedInt32Array(131075, 65536, 0, 131076, 65536, 0, 196613, 0, 0, 196614, 0, 0, 262151, 131072, 0, 262152, 131072, 0, 327689, 131072, 0, 327690, 131072, 0, 393227, 65536, 0, 393228, 65536, 0, 196611, 65536, 0, 262147, 65536, 0, 327683, 65536, 0, 393219, 65536, 0, 458755, 65536, 0, 196612, 0, 0, 262148, 131072, 0, 327684, 131072, 0, 393220, 131072, 0, 458756, 65536, 0, 131077, 65536, 0, 262149, 131072, 0, 393221, 131072, 0, 458757, 65536, 0, 131078, 65536, 0, 262150, 131072, 0, 327686, 131072, 0, 393222, 131072, 0, 458758, 65536, 0, 131079, 65536, 0, 196615, 0, 0, 327687, 131072, 0, 393223, 131072, 0, 458759, 65536, 0, 131080, 65536, 0, 196616, 0, 0, 327688, 131072, 0, 393224, 131072, 0, 458760, 65536, 0, 131081, 65536, 0, 196617, 0, 0, 262153, 131072, 0, 393225, 131072, 0, 458761, 65536, 0, 131082, 65536, 0, 196618, 65536, 0, 262154, 0, 0, 393226, 65536, 0, 458762, 65536, 0, 131083, 65536, 0, 196619, 0, 0, 262155, 131072, 0, 327691, 131072, 0, 458763, 65536, 0, 131084, 65536, 0, 196620, 0, 0, 262156, 131072, 0, 327692, 65536, 0, 458764, 65536, 0, 131085, 65536, 0, 196621, 0, 0, 262157, 131072, 0, 327693, 131072, 0, 393229, 131072, 0, 458765, 65536, 0, 131086, 65536, 0, 196622, 0, 0, 262158, 131072, 0, 327694, 131072, 0, 393230, 131072, 0, 458766, 65536, 0, 131087, 65536, 0, 196623, 0, 0, 262159, 131072, 0, 327695, 131072, 0, 393231, 131072, 0, 458767, 65536, 0, 131088, 65536, 0, 196624, 65536, 0, 262160, 65536, 0, 327696, 65536, 0, 393232, 65536, 0, 458768, 65536, 0, 327685, 131072, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_78562")
+script = ExtResource("6_ho5mg")
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 235.0
+offset_bottom = 200.0
+columns = 4
+
+[node name="title" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "Stamina:"
+
+[node name="player_stamina" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="slash" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "/"
+
+[node name="max_stamina" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="quit_button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 160.0
+offset_right = 319.0
+offset_bottom = 179.0
+text = "Quit"
+
+[node name="reset_button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 160.0
+offset_right = 271.0
+offset_bottom = 179.0
+text = "Reset"
+
+[node name="undo_button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 160.0
+offset_right = 37.0
+offset_bottom = 179.0
+text = " Undo"
+
+[node name="cookie" parent="." instance=ExtResource("7_c5360")]
+position = Vector2(200, 72)
+
+[node name="box" parent="." instance=ExtResource("8_1i8hh")]
+y_sort_enabled = true
+position = Vector2(136, 72)
+
+[node name="box2" parent="." instance=ExtResource("8_1i8hh")]
+y_sort_enabled = true
+position = Vector2(136, 88)
+
+[node name="box3" parent="." instance=ExtResource("8_1i8hh")]
+y_sort_enabled = true
+position = Vector2(136, 104)
+
+[node name="player" parent="." instance=ExtResource("10_ohvt4")]
+position = Vector2(72, 88)
+
+[node name="cookie_of_ultimate_power" parent="." instance=ExtResource("11_6rhfj")]
+position = Vector2(248, 88)
+
+[connection signal="button_up" from="UI/quit_button" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="UI/reset_button" to="." method="_on_reset_button_button_up"]
+[connection signal="button_up" from="UI/undo_button" to="." method="_on_undo_button_button_up"]

@@ -1,25 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://brr7ntbe2c4fc"]
+[gd_scene load_steps=7 format=3 uid="uid://brr7ntbe2c4fc"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_6ifyv"]
-[ext_resource type="Texture2D" uid="uid://br83bhhfx7gy3" path="res://Textures/knight_m_idle_anim_f0.png" id="1_rcnow"]
-[ext_resource type="Texture2D" uid="uid://b5prrjcfp0ugc" path="res://Textures/knight_m_idle_anim_f1.png" id="2_xw80w"]
-[ext_resource type="Texture2D" uid="uid://fok8ko6fedbc" path="res://Textures/knight_m_idle_anim_f2.png" id="3_rls18"]
-[ext_resource type="Texture2D" uid="uid://16mpo8l3m8dc" path="res://Textures/knight_m_idle_anim_f3.png" id="4_ph2qo"]
+[ext_resource type="Texture2D" uid="uid://cylwp7k2if5o6" path="res://Textures/knight.png" id="2_v3exl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km804"]
+atlas = ExtResource("2_v3exl")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iipfe"]
+atlas = ExtResource("2_v3exl")
+region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jgb4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_rcnow")
+"texture": SubResource("AtlasTexture_km804")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_xw80w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_rls18")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ph2qo")
+"texture": SubResource("AtlasTexture_iipfe")
 }],
 "loop": true,
 "name": &"Idle",
@@ -41,7 +40,7 @@ scale = Vector2(1, 1.07143)
 sprite_frames = SubResource("SpriteFrames_1jgb4")
 animation = &"Idle"
 frame_progress = 0.0939021
-offset = Vector2(0, -8)
+offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b0b7f")

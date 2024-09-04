@@ -7,6 +7,10 @@ func _ready():
 
 func get_hit():
 	hide()
+	var new = Global.bloodsplosion.instantiate()
+	get_tree().get_current_scene().add_child(new)
+	new.position = position
+	new.emitting = true
 	$CollisionShape2D.disabled = true
 	GlobalSignalBus.enemy_hit.emit(self)
 

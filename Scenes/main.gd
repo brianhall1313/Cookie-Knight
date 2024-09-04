@@ -1,7 +1,13 @@
 extends Node2D
 
+@onready var cookie=preload("res://Scenes/falling_cookie.tscn")
+@onready var cookie_spawn = $cookie_spawn_path/cookie_spawn
+
+@onready var cookie_spawn_path = $cookie_spawn_path
+
 var in_credits:bool = false
 var in_how_to_play:bool = false
+
 
 func _ready():
 	$"Control/VBoxContainer/VBoxContainer/New Game".grab_focus()
@@ -46,7 +52,7 @@ func _on_quit_button_up():
 func _on_new_game_button_up():
 	transition()
 	await GlobalSignalBus.transition_done
-	get_tree().change_scene_to_file("res://level_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
 
 
 func _on_credits_button_up():
@@ -56,7 +62,8 @@ func _on_credits_button_up():
 	in_credits = true
 	popup_transition_two()
 	await GlobalSignalBus.transition_done
-	$Control/credits/VBoxContainer/credits_back.grab_focus()
+	$Control/VBoxContainer/VBoxContainer/Credits.release_focus()
+#	$Control/credits/VBoxContainer/credits_back.grab_focus()
 
 func _on_how_to_play_button_up():
 	popup_transition_one()
@@ -65,7 +72,8 @@ func _on_how_to_play_button_up():
 	in_how_to_play = true
 	popup_transition_two()
 	await GlobalSignalBus.transition_done
-	$"Control/how to play/VBoxContainer/how_to_play_button_back".grab_focus()
+	$"Control/VBoxContainer/VBoxContainer/How to Play".release_focus()
+#	$"Control/how to play/VBoxContainer/how_to_play_button_back".grab_focus()
 
 
 func _on_how_to_play_button_back_button_up():
@@ -93,3 +101,10 @@ func _on_continue_button_up():
 	await GlobalSignalBus.transition_done
 	Global.load_stuff()
 	get_tree().change_scene_to_file("res://level_select.tscn")
+
+
+func _on_cookie_timer_timeout():
+	var new = cookie.instantiate()
+	cookie_spawn.progress_ratio = randf()
+	new.position = cookie_spawn.position
+	$cookie_container.add_child(new)
