@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://wnq5ncsxhm3i"]
+[gd_scene load_steps=11 format=3 uid="uid://wnq5ncsxhm3i"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_et5cd"]
 [ext_resource type="Theme" uid="uid://bi3xdm2usb45q" path="res://Resources/basic_theme.tres" id="2_oahii"]
 [ext_resource type="Texture2D" uid="uid://cdmi8l67x2fhm" path="res://Textures/test_sheet.png" id="3_b2jmq"]
 [ext_resource type="Texture2D" uid="uid://cylwp7k2if5o6" path="res://Textures/knight.png" id="4_nvngl"]
+[ext_resource type="FontFile" uid="uid://bpc8v8gwe0htj" path="res://Resources/MinimalPixelFont.ttf" id="5_idpos"]
 
 [sub_resource type="Curve2D" id="Curve2D_otk3x"]
 _data = {
@@ -203,26 +204,32 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Made for Mini Jam 163: Dessert
 Limitation: Sharing is Caring
+Engine: Godot 4
 Designer/Programmer
-Brian Hall
-https://pr0t34n.itch.io/
+Brian Hall: https://pr0t34n.itch.io/
 Music:
 \"Adventure Meme\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
-http://creativecommons.org/licenses/by/4.0/
-
-"
+http://creativecommons.org/licenses/by/4.0/"
 horizontal_alignment = 1
 
-[node name="credits_back" type="Button" parent="Control/credits/VBoxContainer"]
+[node name="LinkButton" type="LinkButton" parent="Control/credits/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
-text = "Back"
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("5_idpos")
+text = "Godot License"
+uri = "https://godotengine.org/license/"
 
 [node name="Control" type="Control" parent="Control/credits/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="credits_back" type="Button" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Back"
 
 [node name="cookie timer" type="Timer" parent="."]
 wait_time = 0.1

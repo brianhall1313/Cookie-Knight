@@ -53,4 +53,3 @@ func wipe_in():
 	await tween.finished
 	GlobalSignalBus.transition_done.emit()
 	queue_free()
-
